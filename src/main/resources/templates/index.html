@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Artistas</title>
+</head>
+<body>
+<h1>Lista de Artistas</h1>
+<div th:each="a : ${artistas}">
+    <p th:text="${a.bocetar(a.obra)}"></p>
+    <p th:text="${a.pintar(a.obra)}"></p>
+    <p th:text="${a.exhibir(a.obra)}"></p>
+    <hr/>
+</div>
+
+</body>
+</html>
