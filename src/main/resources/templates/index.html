@@ -2,14 +2,99 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Artistas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f0ede8;
+            color: #1a1a1a;
+            min-height: 100vh;
+            padding: 3rem 1.5rem;
+        }
+
+        header {
+            max-width: 720px;
+            margin: 0 auto 3rem;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 1.25rem;
+        }
+
+        header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.75rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .artistas-list {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .artista-card {
+            background: #fff;
+            border: 1px solid #d9d5cf;
+            padding: 1.75rem 2rem;
+        }
+
+        .etapa {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #ece9e4;
+        }
+
+        .etapa:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .etapa-label {
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #888;
+            min-width: 72px;
+        }
+
+        .etapa-texto {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #2e2e2e;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
-<h1>Lista de Artistas</h1>
-<div th:each="a : ${artistas}">
-    <p th:text="${a.bocetar(a.obra)}"></p>
-    <p th:text="${a.pintar(a.obra)}"></p>
-    <p th:text="${a.exhibir(a.obra)}"></p>
-    <hr/>
+
+<header>
+    <h1>Lista de Artistas</h1>
+</header>
+
+<div class="artistas-list">
+    <div class="artista-card" th:each="a : ${artistas}">
+        <div class="etapa">
+            <span class="etapa-label">Boceto</span>
+            <span class="etapa-texto" th:text="${a.bocetar(a.obra)}"></span>
+        </div>
+        <div class="etapa">
+            <span class="etapa-label">Pintura</span>
+            <span class="etapa-texto" th:text="${a.pintar(a.obra)}"></span>
+        </div>
+        <div class="etapa">
+            <span class="etapa-label">Exhibición</span>
+            <span class="etapa-texto" th:text="${a.exhibir(a.obra)}"></span>
+        </div>
+    </div>
 </div>
 
 </body>
