@@ -1,4 +1,4 @@
-package com.Entrega1.Ces2.Modelo;
+package com.Entrega2.Ces2.Modelo;
 
 public class Obra {
     private String nombre;

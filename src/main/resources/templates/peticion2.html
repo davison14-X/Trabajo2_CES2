@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Peticion 2</title>
+</head>
+<body>
+<h1>Estadísticas del año de las obras</h1>
+<dl>
+  <dt>Conteo de obras:</dt>
+  <dd th:text="${conteo}">0</dd>
+
+  <dt>Suma total de años:</dt>
+  <dd th:text="${#numbers.formatDecimal(sumatotal, 1, 0)}">0</dd>
+
+  <dt>Promedio de años:</dt>
+  <dd th:text="${#numbers.formatDecimal(promedio, 1, 2)}">0.00</dd>
+
+  <dt>Año mínimo:</dt>
+  <dd th:text="${min}">0</dd>
+
+  <dt>Año máximo:</dt>
+  <dd th:text="${max}">0</dd>
+</dl>
+</body>
+</html>

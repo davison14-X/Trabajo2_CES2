@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Peticion 3</title>
+</head>
+<body>
+<h1>Autores de todas las obras</h1>
+<ul>
+    <li th:each="autor : ${autores}" th:text="${autor}"></li>
+</ul>
+</body>
+</html>

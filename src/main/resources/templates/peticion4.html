@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Peticion 4</title>
+</head>
+<body>
+<h1>Consultas con anyMatch y noneMatch</h1>
+<dl>
+    <dt>¿Hay alguna obra anterior a 1900?</dt>
+    <dd th:text="${hayObraAntesDe1900}">false</dd>
+
+    <dt>¿Hay alguna obra posterior a 1950?</dt>
+    <dd th:text="${hayObraDespuesDe1950}">false</dd>
+
+    <dt>¿Ninguna obra es del año 2000 o posterior?</dt>
+    <dd th:text="${ningunaDe2000}">false</dd>
+</dl>
+</body>
+</html>

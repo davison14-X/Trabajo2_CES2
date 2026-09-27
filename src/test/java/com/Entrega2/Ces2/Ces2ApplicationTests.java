@@ -1,4 +1,4 @@
-package com.Entrega1.Ces2;
+package com.Entrega2.Ces2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
