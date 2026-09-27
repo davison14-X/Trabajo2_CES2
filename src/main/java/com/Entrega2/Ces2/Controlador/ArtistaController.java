@@ -67,14 +67,14 @@ public class ArtistaController {
         Boolean hayObraAntesDe1900 = todasLasObras.stream()
                 .anyMatch(o -> o.getAnio() < 1900);
 
-        Boolean hayObraDespuesDe1950 = todasLasObras.stream()
-                .anyMatch(o -> o.getAnio() > 1950);
+        Boolean todasDespuesDe1800 = todasLasObras.stream()
+                .allMatch(o -> o.getAnio() > 1800);
 
         Boolean ningunaDe2000 = todasLasObras.stream()
                 .noneMatch(o -> o.getAnio() >= 2000);
 
         model.addAttribute("hayObraAntesDe1900", hayObraAntesDe1900);
-        model.addAttribute("hayObraDespuesDe1950", hayObraDespuesDe1950);
+        model.addAttribute("todasDespuesDe1800", todasDespuesDe1800);
         model.addAttribute("ningunaDe2000", ningunaDe2000);
         return "peticion4";
     }
